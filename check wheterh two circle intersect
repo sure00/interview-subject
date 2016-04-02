@@ -1,0 +1,23 @@
+#include <stdio.h> 
+#include <math.h>
+
+int main () 
+{ 
+   float x1,y1,c1,x2,y2,c2,dist;
+ /* use scanf to get input from console */ 
+ 	scanf("%f" "%f" "%f",&x1,&y1,&c1);
+  	scanf("%f" "%f" "%f",&x2,&y2,&c2);
+ /* use printf to print output to console */ 
+ 	dist = sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+	if(x1==x2 && y1==y2 && c1!=c2){
+      printf("YES\n");
+      return (0);
+    }  
+  	if(dist > (c1+c2))  {
+      printf("NO\n");
+    }
+    else
+       printf("YES\n");
+  
+    return(0); 
+} 
