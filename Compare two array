@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+
+int main ()
+{
+  double arr1[11],arr2[11];
+  float diff=0;
+    int i=0;
+ /* use scanf to get input from console */
+    while(i<11){
+        scanf("%le",&arr1[i]);
+        i++;
+    }
+    i=0;
+    while(i<11){
+        scanf("%le",&arr2[i]);
+        i++;
+    }
+ /* use printf to print output to console */
+
+    for(i=0;i<11;i++){
+      diff +=arr1[i]-arr2[i];
+    }
+    if(diff ==0){
+      printf("YES\n");
+    }
+    else{
+      printf("NO\n");
+    }
+    return(0);
+}
