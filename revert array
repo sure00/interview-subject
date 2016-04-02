@@ -7,7 +7,6 @@ int main() {
     int i=0, N;
 
     scanf("%d", &N);
-
     while(i < N){
         scanf("%le", &sour[i]);
         i++;
