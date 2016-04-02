@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    double sour[100000];
+    double tmp;
+    int i=0, N;
+
+    scanf("%d", &N);
+
+    while(i < N){
+        scanf("%le", &sour[i]);
+        i++;
+    }
+
+    for(i=0;i<(N/2);i++){
+        tmp=sour[N-1-i];
+        sour[N-1-i]=sour[i];
+        sour[i]=tmp;
+    }
+
+    for(i=0;i<N;i++){
+        printf("%d",(int)sour[i]);
+        if(i!=(N-1))
+            printf(" ");
+        else{
+            printf("\n");
+            return 0;
+        }
+    }
+
+   return 0;
+}
