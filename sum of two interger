@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char str1[100000];
+    char str2[100000];
+    char result[100000];
+    char *min;
+    char *max;
+    
+    int carry=0;
+    int minlen;
+    int maxlen;
+    int lenstr1=0,lenstr2=0;
+    int temp=0;
+    int i;
+
+    scanf("%s",str1);
+    scanf("%s",str2);
+
+    lenstr1 = strlen(str1);
+    lenstr2 = strlen(str2);
+
+    if(lenstr1 <= lenstr2) {
+        min = str1;
+        minlen = lenstr1;
+        max = str2;
+        maxlen = lenstr2;
+    }
+    else{
+        min = str2;
+        minlen = lenstr2;
+        max = str1;
+        maxlen = lenstr1;
+    }
+
+    for(i=1;i<=maxlen;i++){
+        if (i <= minlen)
+            temp = max[maxlen-i]-'0' + min[minlen-i]-'0';
+        else
+            temp = max[maxlen-i]-'0';
+
+        if(carry ==1){
+            temp +=1;
+            carry =0;
+        }
+        if (temp > 9) {
+            temp = temp-10;
+            carry =1;
+        }
+        result[maxlen-i]= temp + '0';
+    }   
+    result[maxlen]='\0';
+
+    printf("%s\n", result); 
+return 0;
+}
