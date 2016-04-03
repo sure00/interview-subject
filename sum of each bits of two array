@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char arr1[1024];
+    char arr2[1024];
+    unsigned long Pos1=0,Pos2=0,i;
+    unsigned long lenArr1=0, lenArr2=0, maxlen=0;
+    int val1,val2;
+
+    unsigned long sum=0;
+
+    scanf("%s", arr1);
+    scanf("%s", arr2);
+
+    lenArr1= strlen(arr1);
+    lenArr2= strlen(arr2);
+
+    if(lenArr1 > lenArr2)
+        maxlen = lenArr1;
+    else
+        maxlen = lenArr2;
+
+    for(i=0;i<maxlen;i++){
+        if((lenArr1 != maxlen) && (i>= lenArr1)){
+            val1 = 0;
+        }
+        else{
+            val1 = arr1[lenArr1-i-1]-'0';
+        }
+
+        if((lenArr2 != maxlen) && (i>= lenArr2)){
+            val2 = 0;
+        }
+        else{
+            val2 = arr2[lenArr2-i-1]-'0';
+        }
+
+        sum +=val1*val2;
+    }
+    printf("%ld\n", sum);
+}
