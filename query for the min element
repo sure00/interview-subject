@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main ()
+{
+    unsigned long lenArray=0,i=0,j=0,sPos,ePos,min=4294967295;
+    unsigned long numQueies=0;
+    long ele[1000000];
+    unsigned long quey[100000][2];
+ /* use scanf to get input from console */
+    scanf("%ld",&lenArray);
+    for(i=0;i<lenArray;i++){
+      scanf("%ld", &ele[i]);
+    }
+
+    scanf("%ld", &numQueies);
+
+    for(i=0;i<numQueies;i++){
+      scanf("%ld",&quey[i][0]);
+      scanf("%ld",&quey[i][1]);
+    }
+ /* use printf to print output to console */
+    for(i=0;i<numQueies;i++){
+      sPos = quey[i][0];
+      ePos = quey[i][1];
+
+      for(j=sPos;j<=ePos;j++){
+        if(min>ele[j])
+          min= ele[j];
+      }
+      printf("%ld\n",min);
+      min=4294967295;
+    }
+    return(0);
+}
